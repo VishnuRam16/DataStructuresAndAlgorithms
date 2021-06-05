@@ -49,5 +49,4 @@ public static void Merge(int[] input, int start, int mid, int end)
         System.out.println(arr[i]);
       }
   }
-  
 }
