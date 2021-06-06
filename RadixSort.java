@@ -27,14 +27,14 @@ public class RadixSort
     }
 
     int[] temp = new int[numItems];
-    for(int tempIndex = numItems - 1; tempIndex >= 0; tempIndex--)
+    for(int k = numItems - 1; k >= 0; k--)
     {
-      temp[--countArr[getDigit(index, input[tempIndex], radix)]] = input[tempIndex];
+      temp[--countArr[getDigit(index, input[k], radix)]] = input[k];  //Inserts rightmost values before left most values as we need to create a stable algorithm. 
     }
 
-    for(int tempIndex = 0; tempIndex < numItems; tempIndex++)
+    for(int k = 0; k < numItems; k++)
     {
-      input[tempIndex] = temp[tempIndex];
+      input[k] = temp[k];
     }
   }
 
