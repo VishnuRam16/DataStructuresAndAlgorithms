@@ -19,7 +19,7 @@ public static void Partition(int[] input, int start, int end)
 
 public static void Merge(int[] input, int start, int mid, int end)
 {
-  if(input [mid - 1] <= input[mid])
+  if(input [mid - 1] >= input[mid])
   {
     return;
   }
@@ -31,7 +31,7 @@ public static void Merge(int[] input, int start, int mid, int end)
   int[] tempArr = new int[end - start];
   while(i < mid && j < end)
   {
-    tempArr[temp++] = input[i] <= input[j] ? input[i++] : input[j++];
+    tempArr[temp++] = input[i] >= input[j] ? input[i++] : input[j++];
   }
 
     System.arraycopy(input, i, input, start + temp, mid - i);
