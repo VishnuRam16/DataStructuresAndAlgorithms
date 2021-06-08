@@ -23,6 +23,16 @@ public class InsertionSort
 
     input[i] = insertedElement;
 
+    System.out.println("Array when numitems = " +numItems);
+    for(i = 0; i < input.length; i++)
+    {
+      System.out.print(input[i]);
+      System.out.print(", ");
+    }
+
+    System.out.println(" ");
+    System.out.println("----------------------------");
+
     
 
     }
