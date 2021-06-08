@@ -40,7 +40,7 @@ public class RadixSort
 
   public static int GetIndex(int index, String letter)
   {
-    return letter.charAt(index)-'a'; // a in ascii is 97, there we subtract to get their respective indexes, example c = 99, index of c = 97-99 = 2. 
+    return letter.charAt(index)-'a'; // a in ascii is 97, there we subtract to get their respective indexes, example c = 99, index of c = 99-97 = 2. 
   }
 
 
