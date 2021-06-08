@@ -1,32 +1,52 @@
-import java.util.Scanner;
+
 
 public class InsertionSort
 {
+  public static void insertionSort(int[] input, int numItems)
+  {
+
+    if(numItems < 2)
+    {
+      return;
+    }
+    
+    insertionSort(input, numItems - 1);
+
+    
+    int insertedElement = input[numItems - 1];
+    int i;
+
+    for(i = numItems - 1; i > 0 && input[i - 1] > insertedElement; i--)
+    {
+      input[i] = input[i-1];
+    }
+
+    input[i] = insertedElement;
+
+    
+
+    }
+
+
   public static void main(String[] args)
   {
-    int[] array = new int[5];
-    Scanner s  = new Scanner(System.in);
-    System.out.println("Enter values for the array: ");
+    int[] array = {1,6,2,3,9,8,0,4};
 
-    for(int i = 0; i< array.length; i++)
-    {
-        array[i] = s.nextInt();
-    }
-    s.close();
-  
-    for(int unsortedIndex = 1; unsortedIndex < array.length; unsortedIndex++)
-    {
-      int insertedElement = array[unsortedIndex];
-      int i;
+    insertionSort(array, array.length);
 
-      for(i = unsortedIndex; i > 0 && array[i - 1] > insertedElement; i--)
-      {
-        array[i] = array[i-1];
-      }
+    // for(int unsortedIndex = 1; unsortedIndex < array.length; unsortedIndex++)
+    // {
+    //   int insertedElement = array[unsortedIndex];
+    //   int i;
 
-      array[i] = insertedElement;
+    //   for(i = unsortedIndex; i > 0 && array[i - 1] > insertedElement; i--)
+    //   {
+    //     array[i] = array[i-1];
+    //   }
 
-    }
+    //   array[i] = insertedElement;
+
+    // }
 
     System.out.println("The sorted array is: ");
     for(int i = 0; i < array.length; i++)
