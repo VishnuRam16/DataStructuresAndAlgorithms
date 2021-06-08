@@ -3,22 +3,22 @@
 public class RadixSort 
 {
 
-  public static void radixSort(int[] input, int radix, int width)
+  public static void radixSort(String[] input, int radix, int width)
   {
-    for(int i = 0; i < width; i++)
+    for(int i = width - 1; i >= 0; i--)
     {
       radixSortIndexWise(input, i, radix);
     }
   }
 
-  public static void radixSortIndexWise(int[] input, int index, int radix)
+  public static void radixSortIndexWise(String[] input, int index, int radix)
   {
     int numItems = input.length;
     int[] countArr = new int[radix];
 
-    for(int value: input)
+    for(String letter: input)
     {
-      countArr[getDigit(index, value, radix)]++;
+      countArr[GetIndex(index, letter)]++;
     }
 
     for(int j = 1; j < radix; j++)
@@ -26,10 +26,10 @@ public class RadixSort
        countArr[j] += countArr[j - 1];
     }
 
-    int[] temp = new int[numItems];
+    String[] temp = new String[numItems];
     for(int k = numItems - 1; k >= 0; k--)
     {
-      temp[--countArr[getDigit(index, input[k], radix)]] = input[k];  //Inserts rightmost values before left most values as we need to create a stable algorithm. 
+      temp[--countArr[GetIndex(index, input[k])]] = input[k];  //Inserts rightmost values before left most values as we need to create a stable algorithm. 
     }
 
     for(int k = 0; k < numItems; k++)
@@ -38,16 +38,18 @@ public class RadixSort
     }
   }
 
-  public static int getDigit(int index, int value, int radix)
+  public static int GetIndex(int index, String letter)
   {
-    return value / (int) Math.pow(radix, index) % radix;
+    return letter.charAt(index)-'a'; // a in ascii is 97, there we subtract to get their respective indexes, example c = 99, index of c = 97-99 = 2. 
   }
+
+
 
   public static void main(String[] args)
   {
-      int[] arr = { 123, 231, 254, 169, 173, 238};
+      String[] arr = {"bdcfe", "dabcq", "maodd", "abcde", "ccccc"};
 
-      radixSort(arr, 10, 3);
+      radixSort(arr, 26, 5);
 
       for(int i = 0; i < arr.length; i++)
       {
