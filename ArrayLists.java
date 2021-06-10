@@ -35,10 +35,10 @@ public class ArrayLists
 
   public String toString()
   {
-    return "Student {" + 
+    return "Student -->" + 
               " firstName = " + firstName + '\'' +
               " age = '" + age + '\'' +
-              '}';
+              ' ';
   }
   
 
@@ -52,6 +52,11 @@ public class ArrayLists
       studentDetails.add(new ArrayLists("Anakin", 52));
 
       studentDetails.forEach(student -> System.out.println((student)));
+
+      studentDetails.set(4, new ArrayLists("Luke Skywalker", 21));
+
+      studentDetails.forEach(student -> System.out.println((student)));
+
 
   }
 }
