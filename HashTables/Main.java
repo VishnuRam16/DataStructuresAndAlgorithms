@@ -20,7 +20,13 @@ public class Main
 
     hash.DisplayHashTable();
 
-    System.out.println("Get key Windu: " + hash.Retrieve("Windu"));
+    System.out.println("Removal of Items: \n");
+
+    hash.Remove("Kenobi");
+    hash.Remove("Yoda");
+
+    hash.DisplayHashTable();
+
 
   } 
 }

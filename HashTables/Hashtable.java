@@ -56,6 +56,31 @@ public class Hashtable
     return hashtable[hashedKey].studentDetails;
   }
 
+  public StudentDetails Remove(String key)
+  {
+    int hashedKey = FindKey(key); 
+    if(hashedKey == -1)
+    {
+      return null;
+    }
+
+    StudentDetails studentDetails = hashtable[hashedKey].studentDetails;
+    hashtable[hashedKey] = null;
+
+    KeyValuePairing[] previousHastable = hashtable;
+    hashtable = new KeyValuePairing[previousHastable.length];
+
+    for(int i = 0; i < previousHastable.length; i++)
+    {
+      if(previousHastable[i] != null)
+      {
+          Put(previousHastable[i].key, previousHastable[i].studentDetails);
+      }
+    }
+
+    return studentDetails;
+  }
+
   public void DisplayHashTable()
   {
     for(int i =0; i < hashtable.length; i++)
@@ -67,6 +92,9 @@ public class Hashtable
     {
       System.out.println(hashtable[i].studentDetails);
     }
+
+    System.out.println("\n");
+
   }
 
   public boolean Occupied(int index)
@@ -96,13 +124,13 @@ public class Hashtable
       hashedKey = (hashedKey + 1) % hashtable.length;
     }
 
-    if(stopIndex == hashedKey)
+    if(hashtable[hashedKey] != null && hashtable[hashedKey].key.equals(key))
     {
-      return -1;
+      return hashedKey;
     }
     else
     {
-      return hashedKey;
+      return -1;
     }
     
   }
