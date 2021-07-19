@@ -19,7 +19,7 @@ public class LinearSearch
   {
     int[] array = {10, 20, 5, -10, 12, 4, 0, 24};
 
-    System.out.println("Required element is at index: ");
-    System.out.println(linearSearch(array, 12));
+    System.out.println("Required element is at index: " +linearSearch(array, 12));
+  
   }
 }
