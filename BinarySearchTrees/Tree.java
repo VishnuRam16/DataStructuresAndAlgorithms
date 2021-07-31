@@ -32,4 +32,28 @@ public class Tree
     }
     return null;
   }
+
+  public int Min()
+  {
+    if(root == null)
+    {
+      return Integer.MIN_VALUE;
+    }
+    else
+    {
+      return root.Min();
+    }
+  }
+
+  public int Max()
+  {
+    if(root == null)
+    {
+      return Integer.MAX_VALUE;
+    }
+    else
+    {
+      return root.Max();
+    }
+  }
 }

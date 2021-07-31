@@ -104,6 +104,31 @@ public class Nodes
     return null;
   }
 
+  public int Min()
+  {
+    if(leftChild == null)
+    {
+      return data;
+    }
+    else
+    {
+      return leftChild.Min();
+    }
+  }
+
+  public int Max()
+  {
+    if(rightChild == null)
+    {
+      return data;
+    }
+    else
+    {
+      return rightChild.Max();
+    }
+  }
+
+
   public String toString() {
     return "Data = " + data;
 }

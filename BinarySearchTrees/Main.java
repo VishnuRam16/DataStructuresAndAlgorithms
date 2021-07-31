@@ -21,6 +21,10 @@ public class Main
     System.out.println(tree.Get(17));
     System.out.println(tree.Get(30));
 
+    System.out.println(tree.Min());
+    System.out.println(tree.Max());
+
+
     
     
   }
