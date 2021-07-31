@@ -13,16 +13,23 @@ public class Main
     tree.Insert(17);
     tree.Insert(1);
     tree.Insert(21);
+    tree.Insert(2);
+    tree.Insert(16);
+    tree.Insert(19);
+    tree.Insert(22);
 
     tree.InOrderTraversal();
     System.out.println();
 
     System.out.println(tree.Get(15));
-    System.out.println(tree.Get(17));
-    System.out.println(tree.Get(30));
 
     System.out.println(tree.Min());
-    System.out.println(tree.Max());
+    System.out.println(tree.Max()); 
+
+    tree.Delete(18);
+
+    tree.InOrderTraversal();
+    System.out.println();
 
 
     
