@@ -80,5 +80,32 @@ public class Nodes
 
   }
 
+  public Nodes Get(int value)
+  {
+    if(value == data)
+    {
+      return this;
+    }
+
+    if(value < data)
+    {
+      if(leftChild != null)
+      {
+        return leftChild.Get(value);
+      }    
+    }
+    else
+    {
+      if(rightChild != null)
+      {
+        return rightChild.Get(value);
+      }
+    }
+    return null;
+  }
+
+  public String toString() {
+    return "Data = " + data;
+}
 
 }

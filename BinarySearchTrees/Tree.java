@@ -23,4 +23,13 @@ public class Tree
       root.InOrderTraversal();
     }
   }
+
+  public Nodes Get(int value)
+  {
+    if(root != null)
+    {
+      return root.Get(value);
+    }
+    return null;
+  }
 }

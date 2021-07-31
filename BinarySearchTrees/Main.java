@@ -15,6 +15,12 @@ public class Main
     tree.Insert(21);
 
     tree.InOrderTraversal();
+    System.out.println();
+
+    System.out.println(tree.Get(15));
+    System.out.println(tree.Get(17));
+    System.out.println(tree.Get(30));
+
     
     
   }
