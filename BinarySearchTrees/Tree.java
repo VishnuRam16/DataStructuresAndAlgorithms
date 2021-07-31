@@ -17,11 +17,11 @@ public class Tree
     }
   }
 
-  public void InOrderTraversal()
+  public void PreOrderTraversal()
   {
     if(root != null)
     {
-      root.InOrderTraversal();
+      root.PreOrderTraversal();
     }
   }
 

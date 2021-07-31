@@ -66,16 +66,17 @@ public class Nodes
       }
   }
 
-  public void InOrderTraversal()
+  public void PreOrderTraversal()
   {
+    System.out.print(data+ ",");
+
     if(leftChild != null)
     {
-      leftChild.InOrderTraversal();
+      leftChild.PreOrderTraversal();
     }
-    System.out.print(data+ ",");
     if(rightChild != null)
     {
-      rightChild.InOrderTraversal();
+      rightChild.PreOrderTraversal();
     }
 
   }

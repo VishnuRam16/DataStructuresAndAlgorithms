@@ -18,7 +18,7 @@ public class Main
     tree.Insert(19);
     tree.Insert(22);
 
-    tree.InOrderTraversal();
+    tree.PreOrderTraversal();
     System.out.println();
 
     System.out.println(tree.Get(15));
@@ -28,7 +28,7 @@ public class Main
 
     tree.Delete(18);
 
-    tree.InOrderTraversal();
+    tree.PreOrderTraversal();
     System.out.println();
 
 
