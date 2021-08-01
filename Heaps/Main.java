@@ -16,6 +16,9 @@ public class Main
     heap.Insert(68);
 
     heap.DisplayHeap();
+    heap.HeapSort();
+    heap.DisplayHeap();
+
     System.out.println("The root is: "+ heap.Peek());
 
     heap.Delete(3);
