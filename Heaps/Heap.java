@@ -126,4 +126,18 @@ public class Heap
     }
     System.out.println();
   }
+
+  public int Peek()
+  {
+      if(IsEmpty())
+      {
+        return -1;
+      }
+      else
+      {
+        return heap[0];
+      }
+
+
+  }
 }

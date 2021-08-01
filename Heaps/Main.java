@@ -16,9 +16,11 @@ public class Main
     heap.Insert(68);
 
     heap.DisplayHeap();
+    System.out.println("The root is: "+ heap.Peek());
 
     heap.Delete(3);
     heap.DisplayHeap();
+
 
 
   }
